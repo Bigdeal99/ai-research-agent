@@ -8,12 +8,32 @@ assistant = AssistantAgent(
     llm_config=LLM_CONFIG
 )
 
+
+
 task_input = {
-    "topic": "machine learning",
-    "year_filter": "after",   # Options: 'in', 'before', 'after'
-    "year": 2020,
-    "citations": 100
+    "topic": "ethics",
+    "year_filter": "in",
+    "year": 2023,
+    "citations": 20
 }
+# 1. combinations 
+
+# task_input = {
+#     "topic": "transformers",
+#     "year_filter": "before",
+#     "year": 2019,
+#     "citations": 1000
+# }
+
+# fail combination
+
+# task_input = {
+#     "topic": "quantum computing",
+#     "year_filter": "after",
+#     "year": 2020,
+#     "citations": 500
+# }
+
 
 print("🔍 Searching for a paper with:")
 print(f"- Topic: {task_input['topic']}")
