@@ -1,0 +1,4 @@
+# Ignore venv and config
+venv/
+__pycache__/
+config.py
