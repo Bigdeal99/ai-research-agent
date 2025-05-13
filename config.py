@@ -1,8 +1,13 @@
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
 LLM_CONFIG = {
     "config_list": [
         {
             "model": "open-mistral-nemo",
-            "api_key": "GaTde6l5mLFx6dmjG784vSsdt73JUEux",
+            "api_key": os.getenv("MISTRAL_API_KEY"),
             "api_type": "mistral",
             "api_rate_limit": 0.25,
             "repeat_penalty": 1.1,
