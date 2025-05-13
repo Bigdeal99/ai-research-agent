@@ -7,3 +7,12 @@
   "feedback": "The agent provided a relevant paper but lacks specific details like authors, journal, and a more detailed abstract. It also doesn't mention how it found the paper or if it checked other databases. The year and citation count match the user's requirements, but the result could be more detailed and the method of retrieval more transparent."
 }
 
+{
+  "completeness": 4,
+  "quality": 4,
+  "robustness": 3,
+  "specificity": 3,
+  "consistency": 4,
+  "feedback": "The agent provided a relevant research paper, but it didn't mention the source or provide a link to the paper. It also didn't explain how it found the paper or how it determined the number of citations. For robustness, it's unclear if the agent can handle more complex queries or filter results more precisely."
+}
+
