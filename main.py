@@ -1,6 +1,8 @@
 from autogen import AssistantAgent, UserProxyAgent
 from config import LLM_CONFIG
 from tool import search_paper
+from critic import CriticEvaluator
+import json
 
 
 assistant = AssistantAgent(
@@ -55,3 +57,14 @@ else:
     print(f"Citations: {paper['citations']}")
     print(f"Abstract: {paper['abstract']}")
     print(f"Link: {paper['link']}")
+    
+critic = CriticEvaluator(LLM_CONFIG)
+evaluation = critic.evaluate(task_input, paper)
+
+print("\n🤖 Critic Evaluation:")
+for key, value in evaluation.items():
+    print(f"{key.capitalize()}: {value}")
+
+with open("evaluation_log.json", "a") as f:
+    f.write(json.dumps(evaluation, indent=2))
+    f.write("\n\n")
