@@ -1,4 +1,11 @@
 # tool.py
+
+# import requests
+# import os
+# from dotenv import load_dotenv
+# load_dotenv()
+# API_KEY = os.getenv("SEMANTIC_SCHOLAR_API_KEY")
+
 def mock_paper_database():
     return [
         {
@@ -44,10 +51,50 @@ def filter_by_year(paper, year_filter, year):
         return paper["year"] > year
     return False
 
+# def search_semantic_scholar(topic, year_filter, year, citations):
+#     year_query = f"year:{year}" if year_filter == "in" else \
+#                  f"year:>{year}" if year_filter == "after" else \
+#                  f"year:<{year}"
+#     query = f"{topic} {year_query}"
+
+#     url = "https://api.semanticscholar.org/graph/v1/paper/search"
+#     params = {
+#         "query": query,
+#         "limit": 1,
+#         "fields": "title,year,authors,citationCount,abstract,url"
+#     }
+#     headers = {
+#         "x-api-key": API_KEY
+#     }
+
+#     try:
+#         response = requests.get(url, params=params, headers=headers)
+#         response.raise_for_status()
+#         data = response.json()
+
+#         if not data["data"]:
+#             return None
+
+#         paper = data["data"][0]
+#         if paper["citationCount"] < citations:
+#             return None
+
+#         return {
+#             "title": paper["title"],
+#             "authors": [a["name"] for a in paper["authors"]],
+#             "year": paper["year"],
+#             "citations": paper["citationCount"],
+#             "abstract": paper.get("abstract", "No abstract available."),
+#             "link": paper["url"]
+#         }
+
+#     except Exception as e:
+#         print("Semantic Scholar API failed:", e)
+#         return None
 def search_paper(topic, year_filter, year, citations):
-    """
-    Simulates a real research paper API by filtering mock data.
-    """
+    # paper = search_semantic_scholar(topic, year_filter, year, citations)
+    # if paper:
+    #     return paper
     topic_lower = topic.lower()
     papers = mock_paper_database()
 
