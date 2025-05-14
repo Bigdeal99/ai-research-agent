@@ -16,3 +16,12 @@
   "feedback": "The agent provided a relevant research paper, but it didn't mention the source or provide a link to the paper. It also didn't explain how it found the paper or how it determined the number of citations. For robustness, it's unclear if the agent can handle more complex queries or filter results more precisely."
 }
 
+{
+  "completeness": 4,
+  "quality": 3,
+  "robustness": 3,
+  "specificity": 2,
+  "consistency": 3,
+  "feedback": "The agent provided a relevant paper but lacks details on why it chose this specific paper and doesn't provide a link or full citation for verification."
+}
+
